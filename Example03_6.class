@@ -1,0 +1,18 @@
+//Пример 6. Предок Exception стоит раньше потомка
+
+public class Example6 {
+    public static void main (String[] args){
+try {
+    //на экран выведен текст
+        System.out.println("0");
+    //"выброшено" исключение, создан экземпляр NullPointerException с сообщением
+        throw new NullPointerException("ошибка");
+
+    } catch (ArithmeticException e) { System.out.println("1" );
+    //предок Exception стоит раньше потомка, исключения не обработаются
+    }catch (Exception e) { System.out.println("2" );
+    } catch (RuntimeException e) { System.out.println("3" );
+    }
+System.out.println("4");
+
+}}
